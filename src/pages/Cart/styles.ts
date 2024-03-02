@@ -5,6 +5,7 @@ export const CartContent = styled.div`
   gap: 24px;
   max-width: 960px;
   padding: 5px;
+  margin-bottom: 76px;
   flex-direction: column;
 `;
 export const DivTitleText = styled.div`
@@ -33,6 +34,7 @@ export const StyledInput = styled.input`
   padding-left: 16px;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
+  background-color: #ffffff;
 `;
 export const LineDivision = styled.div`
   background: #999999;
@@ -81,7 +83,6 @@ export const CartTable = styled.div`
 export const StyledCard = styled.div`
   justify-content: space-around;
   color: black;
-  height: 238px;
   background-color: #ffffff;
   padding: 24px;
   border-radius: 4px;
@@ -98,6 +99,12 @@ export const TableContainer = styled.div`
   border: none;
 `;
 
+export const TableTotalRow = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: space-between;
+`;
 export const TableRow = styled.div`
   display: flex;
 
@@ -109,14 +116,6 @@ export const TableRow = styled.div`
     width: 100;
     margin-bottom: 21px;
     gap: 0;
-  }
-
-  &:nth-child(2) {
-    height: 114px;
-  }
-  &:nth-child(4) {
-    height: 40px;
-    justify-content: space-between;
   }
 
   img {
