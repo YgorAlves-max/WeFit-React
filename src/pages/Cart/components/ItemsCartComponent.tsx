@@ -5,13 +5,14 @@ import trashIcon from "../../../assets/icons/icon-trash.svg";
 import { useNewProducts } from "../../../context/CartContext";
 import StyledDefaultButton from '../../../shared/components/StyledDefaultButton';
 import * as S from '../styles';
+import { Navigate } from "react-router";
 
 const ItemsCartComponent = () => {
     const [showSuccess] = useState(false);
     const { mProducts, increaseQuantity, decreaseQuantity, removeProduct } = useNewProducts();
 
-    const handleRedirectToPage = (productId: number) => {
-        //increaseQuantity(productId);
+    const handleRedirectToPage = () => {
+        return <Navigate to="/home" />
     };
     const handleIncreaseQuantity = (productId: number) => {
         increaseQuantity(productId);

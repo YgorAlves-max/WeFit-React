@@ -1,8 +1,23 @@
 import styled from "styled-components";
 
+export const ContainerSpinner = styled.div`
+  display: flex;
+  height: 626px;
+  align-items: center;
+  justify-content: center;
+`;
+export const ContentSpinner = styled.div`
+  display: flex;
+  margin: 0 auto;
+  height: 83px;
+  max-width: 792px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 export const ContentWrapper = styled.div`
   display: flex;
-  padding: 12px 0 76px 0;
+  margin: 12px 0 76px 0;
   max-width: 960px;
   text-align: center;
   flex-wrap: wrap;

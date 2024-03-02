@@ -36,7 +36,31 @@ export const CartProvider = ({ children }: CartProviderProps) => {
             price: 29.9,
             image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
             quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        }])
+        },
+
+        {
+            id: 4,
+            title: "Homem Aranha",
+            price: 29.9,
+            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
+            quantity: 0 // Inicializa a quantidade como 0 para cada produto
+        },
+        {
+            id: 5,
+            title: "Homem Aranha",
+            price: 29.9,
+            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
+            quantity: 0 // Inicializa a quantidade como 0 para cada produto
+        },
+        {
+            id: 6,
+            title: "Homem Aranha",
+            price: 29.9,
+            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
+            quantity: 0 // Inicializa a quantidade como 0 para cada produto
+        },
+
+    ])
 
     const [mProducts, setMProducts] = useState<Array<Product>>([])
 

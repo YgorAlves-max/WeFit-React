@@ -1,14 +1,18 @@
 import styled from "styled-components";
 import iconcart from "../../assets/icons/icon-cart.svg";
 import { Link } from "react-router-dom";
+import { useNewProducts } from "../../context/CartContext";
 const NavBar = () => {
+  const { mProducts } = useNewProducts();
+
+  const totalItemCount = mProducts.reduce((total, product) => total + product.quantity, 0);
   return (
     <StyledBar>
       <LinkTo to="home">WeMovies</LinkTo>
       <MyCartDiv>
         <LinkToCart to="cart">
           Meu carrinho
-          <ItemsCount>0 itens</ItemsCount>
+          <ItemsCount>{totalItemCount} itens</ItemsCount>
         </LinkToCart>
         <IconCart src={iconcart} />
       </MyCartDiv>
@@ -31,6 +35,7 @@ const IconCart = styled.img`
 `;
 const MyCartDiv = styled.div`
   display: flex;
+  padding-right: 16px;
   width: 135.93px;
   height: 38px;
   gap: 8px;
@@ -52,11 +57,11 @@ const LinkTo = styled(Link)`
   text-decoration: none;
 `;
 const StyledBar = styled.nav`
-  height: 70px;
+  height:57px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 6.5px 0px;
 `;
 
 export default NavBar;

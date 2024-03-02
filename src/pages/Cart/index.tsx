@@ -1,13 +1,17 @@
+import { useNewProducts } from '../../context/CartContext';
 import EmptyCartComponent from './components/EmptyCartComponent';
 import ItemsCartComponent from './components/ItemsCartComponent';
 import * as S from './styles';
-let eTrue: boolean = false;
 
 const Cart = () => {
+  const { mProducts } = useNewProducts();
+  console.log(mProducts);
+
   return (
-    <S.CartContent>{eTrue ?
-      <EmptyCartComponent></EmptyCartComponent> : <ItemsCartComponent />
-    }
+    <S.CartContent>
+      {mProducts.length ?
+        <ItemsCartComponent /> : <EmptyCartComponent />
+      }
     </S.CartContent>
   );
 }
