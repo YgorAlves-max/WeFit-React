@@ -8,8 +8,10 @@ const NavBar = () => {
   const totalItemCount = mProducts.reduce((total, product) => total + product.quantity, 0);
   return (
     <StyledBar>
-      <LinkTo >WeMovies</LinkTo>
-      <Links to="cart">
+      <LinkTo to="home">
+        <LinkToHome >WeMovies</LinkToHome>
+      </LinkTo>
+      <LinkTo to="cart">
         <MyCartDiv>
           <LinkToCart>
             Meu carrinho
@@ -17,7 +19,7 @@ const NavBar = () => {
           </LinkToCart>
           <IconCart src={iconcart} />
         </MyCartDiv>
-      </Links>
+      </LinkTo>
     </StyledBar >
   );
 };
@@ -42,7 +44,7 @@ const MyCartDiv = styled.div`
   height: 38px;
   gap: 8px;
 `;
-const Links = styled(Link)`
+const LinkTo = styled(Link)`
   text-decoration: none;
 `;
 const LinkToCart = styled.div`
@@ -52,7 +54,7 @@ const LinkToCart = styled.div`
   color: #ffffff;
   text-decoration: none;
 `;
-const LinkTo = styled.div`
+const LinkToHome = styled.div`
   width: 101.94px;
   height: 25px;
   font-size: 20px;
