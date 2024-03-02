@@ -1,13 +1,12 @@
-import React from 'react'
-import NavBar from './shared/components/NavBar'
-import { Outlet } from 'react-router'
+import { Outlet } from 'react-router';
 import "./App.css";
+import NavBarComponent from './shared/components/NavBarComponent';
 
 const App = () => {
     return (
         <>
             <div className="App">
-                <NavBar />
+                <NavBarComponent />
                 <Outlet />
             </div>
         </>

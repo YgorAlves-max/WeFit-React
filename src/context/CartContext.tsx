@@ -6,6 +6,9 @@ export interface CartContextProps {
     products: Product[],
     mProducts: Product[],
     loading: boolean,
+    finishBuy: boolean,
+    clearCart: () => void,
+    setFinishBuy: (param: boolean) => void,
     addProduct: (param: Product) => void;
     increaseQuantity: (productId: number) => void;
     decreaseQuantity: (productId: number) => void;
@@ -20,6 +23,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     const [nProducts, setProducts] = useState<Array<Product>>([])
     const [mProducts, setMProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const [finishBuy, setfinishBuy] = useState<boolean>(false);
     useEffect(() => {
         const dataProducts = async () => {
             try {
@@ -63,12 +67,20 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         const updatedProducts = mProducts.filter(product => product.id !== productId);
         setMProducts(updatedProducts);
     }
-
+    function setFinishBuy(param: boolean) {
+        setfinishBuy(param);
+    }
+    function clearCart() {
+        setMProducts([]);
+    }
     return (
         <CartContext.Provider value={{
             products: nProducts,
             mProducts: mProducts,
             loading: loading,
+            finishBuy: finishBuy,
+            setFinishBuy: setFinishBuy,
+            clearCart: clearCart,
             addProduct: addProducts,
             increaseQuantity: increaseQuantity,
             decreaseQuantity: decreaseQuantity,
