@@ -30,7 +30,8 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-server": "json-server --watch server.json --port 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@types/react-router": "^5.1.20",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "json-server": "^1.0.0-alpha.23"
   }
 }

@@ -5,7 +5,6 @@ import * as S from './styles';
 
 const Cart = () => {
   const { mProducts } = useNewProducts();
-  console.log(mProducts);
 
   return (
     <S.CartContent>

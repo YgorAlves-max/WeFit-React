@@ -2,19 +2,14 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import { useNewProducts } from '../../context/CartContext';
 import ItemsCardsComponent from './components/ItemsCardsComponent';
 import * as S from "./styles";
-import { useState } from 'react';
 
 const Home = () => {
-  const [obj, setObj] = useState(false);
-  setTimeout(() => {
-    setObj(true)
-  }, 2000);
-  const { products } = useNewProducts()
+  const { products, loading } = useNewProducts()
 
   return (
     <>
       {
-        products.length && obj ?
+        !loading && products.length ?
           <S.ContentWrapper>
             {products.map((items) => <ItemsCardsComponent key={items.id} product={items} />)}
           </S.ContentWrapper>

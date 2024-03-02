@@ -1,9 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Product } from "../shared/interfaces/products";
+import { getProducts } from "../api";
 
 export interface CartContextProps {
     products: Product[],
     mProducts: Product[],
+    loading: boolean,
     addProduct: (param: Product) => void;
     increaseQuantity: (productId: number) => void;
     decreaseQuantity: (productId: number) => void;
@@ -15,61 +17,31 @@ export interface CartProviderProps {
 export const CartContext = createContext({} as CartContextProps);
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-    const [nProducts] = useState<Array<Product>>([
-        {
-            id: 1,
-            title: "Viúva Negra",
-            price: 9.99,
-            image: "https://wefit-react-web-test.s3.amazonaws.com/viuva-negra.png",
-            quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        },
-        {
-            id: 2,
-            title: "Shang-chi",
-            price: 30.99,
-            image: "https://wefit-react-web-test.s3.amazonaws.com/shang-chi.png",
-            quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        },
-        {
-            id: 3,
-            title: "Homem Aranha",
-            price: 29.9,
-            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
-            quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        },
+    const [nProducts, setProducts] = useState<Array<Product>>([])
+    const [mProducts, setMProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    useEffect(() => {
+        const dataProducts = async () => {
+            try {
+                const data = await getProducts();
+                setProducts(data);
+                setLoading(false)
+            } catch (error) {
+                console.error('Erro ao obter os produtos:', error);
+                setLoading(false);
+            }
+        }
+        dataProducts();
+    }, [])
 
-        {
-            id: 4,
-            title: "Homem Aranha",
-            price: 29.9,
-            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
-            quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        },
-        {
-            id: 5,
-            title: "Homem Aranha",
-            price: 29.9,
-            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
-            quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        },
-        {
-            id: 6,
-            title: "Homem Aranha",
-            price: 29.9,
-            image: "https://wefit-react-web-test.s3.amazonaws.com/spider-man.png",
-            quantity: 0 // Inicializa a quantidade como 0 para cada produto
-        },
-
-    ])
-
-    const [mProducts, setMProducts] = useState<Array<Product>>([])
-
-    function addProduct(newProduct: Product) {
-        const existingProduct = mProducts.find(product => product.id === newProduct.id);
-        if (existingProduct) {
-            increaseQuantity(newProduct.id);
+    function addProducts(newProduct: Product) {
+        const existingProductIndex = mProducts.findIndex(product => product.id === newProduct.id);
+        if (existingProductIndex !== -1) {
+            const updatedProducts = [...mProducts];
+            updatedProducts[existingProductIndex].quantity += 1; // Atualiza a quantidade se o produto já estiver no carrinho
+            setMProducts(updatedProducts);
         } else {
-            setMProducts([...mProducts, { ...newProduct, quantity: 1 }]);
+            setMProducts([...mProducts, { ...newProduct, quantity: 1 }]); // Adiciona o produto com a quantidade 1 se for novo no carrinho
         }
     }
 
@@ -96,7 +68,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         <CartContext.Provider value={{
             products: nProducts,
             mProducts: mProducts,
-            addProduct: addProduct,
+            loading: loading,
+            addProduct: addProducts,
             increaseQuantity: increaseQuantity,
             decreaseQuantity: decreaseQuantity,
             removeProduct: removeProduct
