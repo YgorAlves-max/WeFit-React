@@ -17,14 +17,10 @@ export const ContentSpinner = styled.div`
 `;
 export const ContentWrapper = styled.div`
   display: flex;
-  margin: 12px 0 76px 0;
-  max-width: 960px;
-  text-align: center;
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
   @media (max-width: 768px) {
-    padding: 16px;
     display: flex;
     max-width: 100%;
   }
