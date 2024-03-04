@@ -1,4 +1,118 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+// Constantes compartilhadas
+export const ContentWrapper = css`
+  width: 100%;
+  margin-bottom: 16px;
+`;
+
+export const DivAddInput = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  gap: 8px;
+`;
+
+export const StyledInput = styled.input`
+  width: 47px;
+  height: 26px;
+  padding-left: 16px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  background-color: #ffffff;
+`;
+
+export const ImgContent = styled.img`
+  width: 89px;
+  height: 114px;
+`;
+
+// Mobile
+export const MContentPrice = styled.div`
+  max-width: 98px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+export const MContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const MContentTotalWrapper = styled.h2`
+  ${ContentWrapper};
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0;
+  align-items: center;
+  height: 21px;
+`;
+
+export const MTotalValueText = styled.h1`
+  color: #2f2e41;
+  width: 130.79px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+`;
+
+export const MSubTitleText = styled.h2`
+  color: #999999;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: end;
+  margin: 0;
+`;
+
+export const MContentCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 231px;
+  width: 231px;
+  padding-left: 16px;
+  gap: 16px;
+`;
+
+export const MContentTitle = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const MTitleText = styled.h1`
+  max-width: 117px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+`;
+
+export const MValueText = styled.h1`
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+`;
+
+// Web
+export const ContentTotalWrapper = styled.div`
+  ${ContentWrapper};
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
 export const CartContent = styled.div`
   display: flex;
@@ -6,8 +120,15 @@ export const CartContent = styled.div`
   max-width: 960px;
   padding: 5px;
   margin-bottom: 76px;
+  padding: 16px;
   flex-direction: column;
+  @media (max-width: 768px) {
+    padding: 16px;
+    height: 684px;
+    margin: 0;
+  }
 `;
+
 export const DivTitleText = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,43 +138,22 @@ export const DivTitleText = styled.div`
   margin: 0 52px 0 52px;
   gap: 8px;
 `;
-export const DivAddInput = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 120px;
-`;
+
 export const StyledDivBottom = styled.span`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
-export const StyledInput = styled.input`
-  width: 47px;
-  height: 26px;
-  padding-left: 16px;
-  border-radius: 4px;
-  border: 1px solid #d9d9d9;
-  background-color: #ffffff;
-`;
-export const LineDivision = styled.div`
-  background: #999999;
-  max-width: 905px;
-  width: 100%;
-  height: 1px;
-  margin-bottom: 21px;
-  margin-top: 21px;
-`;
-export const ImgContent = styled.img`
-  width: 89px;
-  height: 114px;
-`;
+
 export const TotalValueText = styled.h1`
+  width: 130.79px;
+  color: #2f2e41;
   margin: 0px;
   font-size: 24px;
   font-weight: 700;
   text-align: center;
 `;
+
 export const TitleText = styled.h1`
   text-align: left;
   margin: 0;
@@ -61,6 +161,7 @@ export const TitleText = styled.h1`
   font-size: 14px;
   font-weight: 700;
 `;
+
 export const ValueText = styled.h2`
   text-align: left;
   margin: 0;
@@ -68,6 +169,7 @@ export const ValueText = styled.h2`
   font-size: 16px;
   font-weight: 700;
 `;
+
 export const SubTitleText = styled.h2`
   text-align: left;
   margin: 0;
@@ -75,6 +177,7 @@ export const SubTitleText = styled.h2`
   font-size: 16px;
   font-weight: 700;
 `;
+
 export const CartTable = styled.div`
   width: 100%;
   border-collapse: collapse;
@@ -86,13 +189,13 @@ export const StyledCard = styled.div`
   background-color: #ffffff;
   padding: 24px;
   border-radius: 4px;
-`;
-export const ContentTotalWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 197.26px;
-  height: 40px;
+  @media (max-width: 768px) {
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 export const TableContainer = styled.div`
@@ -105,15 +208,15 @@ export const TableTotalRow = styled.div`
   height: 40px;
   justify-content: space-between;
 `;
+
 export const TableRow = styled.div`
   display: flex;
-
   align-items: center;
   border-bottom: none;
 
   &:nth-child(1) {
     max-width: 691px;
-    width: 100;
+    width: 100%;
     margin-bottom: 21px;
     gap: 0;
   }
@@ -153,6 +256,42 @@ export const TableHeader = styled(TableCell)`
   &:nth-child(3) {
     max-width: 73px;
   }
+`;
+
+export const ContentDivisedImg = styled.div`
+  width: 100%;
+  max-width: 100%;
+  height: 265.8px;
+  text-align: center;
+`;
+
+export const EmptyImgContent = styled.img`
+  width: 100%;
+  max-width: 178.63px;
+  height: 264px;
+`;
+
+export const EmptyTitleText = styled.h1`
+  height: 35px;
+  margin: 0;
+  color: #2f2e41;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-wrap: balance;
+`;
+
+export const EmptyStyledCard = styled.div`
+  height: 532.8px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
 `;
 
 export const TableT = styled(TableHeader)``;

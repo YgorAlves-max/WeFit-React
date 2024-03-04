@@ -36,6 +36,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
             }
         }
         dataProducts();
+        // return ()=>{}
     }, [])
 
     function addProducts(newProduct: Product) {

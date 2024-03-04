@@ -23,6 +23,11 @@ export const ContentWrapper = styled.div`
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  @media (max-width: 768px) {
+    padding: 16px;
+    display: flex;
+    max-width: 100%;
+  }
 `;
 
 export const HomeCardTitle = styled.div`
@@ -58,6 +63,10 @@ export const HomeCardContent = styled.div`
   font-weight: 700;
   text-align: center;
   padding-bottom: 8px;
+  @media (max-width: 768px) {
+    max-width: 321px;
+    width: 100%;
+  }
 `;
 
 export const HomeImgContent = styled.div`
@@ -66,10 +75,18 @@ export const HomeImgContent = styled.div`
 `;
 
 export const HomeCard = styled.div`
-  width: 287.33px;
+  width: 283px;
   color: #333333;
   height: 285px;
   padding: 10px 11px 10px 11px;
   background-color: #ffffff;
   border-radius: 4px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    width: 321px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;

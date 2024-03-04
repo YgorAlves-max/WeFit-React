@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router';
 import "./App.css";
-import NavBarComponent from './shared/components/NavBarComponent';
+import UINavBar from './shared/components/UINavBar';
 
 const App = () => {
     return (
         <>
             <div className="App">
-                <NavBarComponent />
+                <UINavBar />
                 <Outlet />
             </div>
         </>

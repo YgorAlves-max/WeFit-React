@@ -1,14 +1,14 @@
 import iconShoppingCart from "../../../assets/icons/icon-shopping-cart.svg";
 import { useNewProducts } from "../../../context/CartContext";
-import StyledDefaultButton from '../../../shared/components/StyledDefaultButton';
+import UIDefaultButton from '../../../shared/components/UIDefaultButton';
 import { Product } from '../../../shared/interfaces/products';
 import * as S from '../styles';
 
-interface ItemsCardsComponentProps {
+interface UIProductsProps {
     product: Product;
 }
 
-const ItemsCardsComponent = ({ product }: ItemsCardsComponentProps) => {
+const UIProducts = ({ product }: UIProductsProps) => {
     const { addProduct, mProducts } = useNewProducts()
     const handleAddToCart = () => {
         addProduct(product)
@@ -32,7 +32,7 @@ const ItemsCardsComponent = ({ product }: ItemsCardsComponentProps) => {
                 </S.HomeImgContent>
                 <S.HomeFomatValue>{formattedValue}</S.HomeFomatValue>
             </S.HomeCardContent>
-            <StyledDefaultButton
+            <UIDefaultButton
                 iconSrc={iconShoppingCart}
                 qtdItem={cartQuantity}
                 onClick={handleAddToCart}
@@ -44,4 +44,4 @@ const ItemsCardsComponent = ({ product }: ItemsCardsComponentProps) => {
     );
 }
 
-export default ItemsCardsComponent;
+export default UIProducts;

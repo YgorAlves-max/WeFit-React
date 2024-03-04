@@ -1,5 +1,5 @@
 import styled from "styled-components";
-interface StyledDefaultButtonProps {
+interface UIDefaultButtonpProps {
   widthVal: number;
   label: string;
   onClick: (param: any) => void;
@@ -8,14 +8,14 @@ interface StyledDefaultButtonProps {
   fontSize: number;
 }
 
-const StyledDefaultButton = ({
+const UIDefaultButton = ({
   widthVal,
   label,
   onClick,
   iconSrc,
   qtdItem,
   fontSize,
-}: StyledDefaultButtonProps) => {
+}: UIDefaultButtonpProps) => {
   return (
     <StyledDefaultBtn onClick={onClick} width={widthVal} label={label} fontSize={fontSize}>
       {iconSrc && <StyledIcon src={iconSrc} alt="" />}
@@ -58,8 +58,20 @@ const StyledDefaultBtn = styled.button<{ width: number, label: string, fontSize:
     &:hover {
       background-color: #039B00;
     }
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 321px;
+    }
   `}
+  ${(props: any) =>
+    props.label === 'FINALIZAR PEDIDO' &&
+    ` @media (max-width: 767px) {
+          width:100%;
+          max-width:  100%;
+          }
+      `}
+    
 `;
 
 
-export default StyledDefaultButton;
+export default UIDefaultButton;

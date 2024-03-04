@@ -1,7 +1,7 @@
 import CircularProgress from '@mui/joy/CircularProgress';
 import { useNewProducts } from '../../context/CartContext';
-import ItemsCardsComponent from './components/ItemsCardsComponent';
 import * as S from "./styles";
+import UIProducts from './components/UIProducts';
 
 const Home = () => {
   const { products, loading } = useNewProducts()
@@ -11,7 +11,7 @@ const Home = () => {
       {
         !loading && products.length ?
           <S.ContentWrapper>
-            {products.map((items) => <ItemsCardsComponent key={items.id} product={items} />)}
+            {products.map((items) => <UIProducts key={items.id} product={items} />)}
           </S.ContentWrapper>
           :
           <S.ContainerSpinner>

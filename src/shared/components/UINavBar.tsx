@@ -1,20 +1,26 @@
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import iconcart from "../../assets/icons/icon-cart.svg";
-import { Link } from "react-router-dom";
 import { useNewProducts } from "../../context/CartContext";
-const NavBar = () => {
+const UINavBar = () => {
   const { mProducts } = useNewProducts();
-
+  const location = useLocation();
+  const isConfirmationPage = location.pathname === '/cart/confirmation';
   const totalItemCount = mProducts.reduce((total, product) => total + product.quantity, 0);
   return (
     <StyledBar>
-      <LinkTo to="home">
-        <LinkToHome >WeMovies</LinkToHome>
-      </LinkTo>
+      {!isConfirmationPage ?
+        <LinkTo to="home">
+          <LinkToHome>WeMovies</LinkToHome>
+        </LinkTo>
+        :
+        <LinkToHome>WeMovies</LinkToHome>
+      }
+
       <LinkTo to="cart">
         <MyCartDiv>
           <LinkToCart>
-            Meu carrinho
+            <MyCart> Meu carrinho</MyCart>
             <ItemsCount>{totalItemCount} itens</ItemsCount>
           </LinkToCart>
           <IconCart src={iconcart} />
@@ -31,6 +37,8 @@ const ItemsCount = styled.div`
   font-size: 12px;
   margin: 0;
   text-align: right;
+
+  }
 `;
 
 const IconCart = styled.img`
@@ -43,6 +51,17 @@ const MyCartDiv = styled.div`
   width: 135.93px;
   height: 38px;
   gap: 8px;
+    text-wrap: nowrap;
+  @media (max-width: 768px) {
+    align-items: center;
+    width:81.96px;
+  }
+ 
+`;
+const MyCart = styled.div`
+  @media (max-width: 768px) {
+   display:none; 
+  }
 `;
 const LinkTo = styled(Link)`
   text-decoration: none;
@@ -69,6 +88,7 @@ const StyledBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 6.5px 0px;
+   
 `;
 
-export default NavBar;
+export default UINavBar;

@@ -1,26 +1,23 @@
+import { Navigate } from 'react-router';
 import { useNewProducts } from '../../context/CartContext';
-import EmptyCartComponent from './components/EmptyCartComponent';
-import BuyCartComponent from './components/FinishBuyCartComponent';
-import ItemsCartComponent from './components/ItemsCartComponent';
+import UIEmptyCart from './components/UIEmptyCart';
+import UIItemsCart from './components/UIItemsCart';
 import * as S from './styles';
 
 const Cart = () => {
   const { mProducts, finishBuy } = useNewProducts();
-  const renderComponent = () => {
-
+  const handleRenderUI = () => {
     if (finishBuy) {
-      return (
-        <BuyCartComponent />
-      )
+      return (<Navigate to={'confirmation'} />)
     } else if (mProducts.length) {
       return (
-        <ItemsCartComponent />)
+        <UIItemsCart />)
     }
-    return (<EmptyCartComponent />)
+    return (<UIEmptyCart />)
   }
   return (
     <S.CartContent>
-      {renderComponent()}
+      {handleRenderUI()}
     </S.CartContent>
   );
 }

@@ -1,4 +1,4 @@
-import { Product } from '../shared/interfaces/products';
+import { Product } from '../../shared/interfaces/products';
 
 export const getProducts = async (): Promise<Product[]> => {
     try {
