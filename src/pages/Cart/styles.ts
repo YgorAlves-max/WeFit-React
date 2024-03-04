@@ -260,7 +260,7 @@ export const TableHeader = styled(TableCell)`
 
 export const ContentDivisedImg = styled.div`
   width: 100%;
-  max-width: 100%;
+  max-width: 447px;
   height: 265.8px;
   text-align: center;
 `;
