@@ -4,7 +4,7 @@ export const getProducts = async (): Promise<Product[]> => {
     const dev = "http://localhost:3001";
     const prod = "https://json-wefit.vercel.app";
     try {
-        const response = await fetch(`${prod + "/products"}`);
+        const response = await fetch(`${dev + "/products"}`);
         if (!response.ok) {
             throw new Error('Erro ao obter os produtos');
         }
