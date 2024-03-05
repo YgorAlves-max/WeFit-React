@@ -23,6 +23,10 @@ export const StyledInput = styled.input`
   background-color: #ffffff;
 `;
 
+export const MImgContent = styled.img`
+  width: 64px;
+  height: 82px;
+`;
 export const ImgContent = styled.img`
   width: 89px;
   height: 114px;
@@ -41,6 +45,7 @@ export const MContentWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
 `;
 
 export const MContentTotalWrapper = styled.h2`
@@ -122,10 +127,10 @@ export const CartContent = styled.div`
   margin-bottom: 76px;
   padding: 16px;
   flex-direction: column;
-  @media (max-width: 768px) {
-    padding: 16px;
-    height: 684px;
+  @media (max-width: 767px) {
+    padding: 0 16px 16px;
     margin: 0;
+    height: 716px;
   }
 `;
 
@@ -189,7 +194,7 @@ export const StyledCard = styled.div`
   background-color: #ffffff;
   padding: 24px;
   border-radius: 4px;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     height: 100%;
     padding: 16px;
     display: flex;

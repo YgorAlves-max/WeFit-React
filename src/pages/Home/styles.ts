@@ -23,6 +23,7 @@ export const ContentWrapper = styled.div`
   @media (max-width: 768px) {
     display: flex;
     max-width: 100%;
+    margin-bottom: 16px;
   }
 `;
 
