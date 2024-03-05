@@ -31,7 +31,7 @@ const UIItemsMobileCart = () => {
             <div>
                 {mProducts.map((product) => (
                     <><S.MContentWrapper key={product.id}>
-                        <S.ImgContent src={product.image} />
+                        <S.MImgContent src={product.image} />
                         <S.MContentCart>
                             <S.MContentTitle>
                                 <S.MTitleText>{product.title}</S.MTitleText>
