@@ -28,5 +28,5 @@ export const StyledCard = styled.div`
 `;
 
 export const ContentCard = styled.div`
-  padding: 16px;
+  padding: 0 16px;
 `;
