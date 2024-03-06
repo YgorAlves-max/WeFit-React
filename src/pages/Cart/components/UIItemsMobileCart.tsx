@@ -28,7 +28,8 @@ const UIItemsMobileCart = () => {
 
     return (
         <>
-            <div>
+            <div >
+
                 {mProducts.map((product) => (
                     <><S.MContentWrapper key={product.id}>
                         <S.MImgContent src={product.image} />

@@ -9,7 +9,7 @@ import * as S from '../styles';
 import UIItemsMobileCart from "./UIItemsMobileCart";
 import UILineDivision from "../../../shared/components/UILineDivision";
 
-const UIItemsCart = () => {
+const UIItemsCart = ({ pHeigth }: any) => {
     const { mProducts, increaseQuantity, decreaseQuantity, removeProduct, setFinishBuy, clearCart } = useNewProducts();
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     useEffect(() => {
@@ -40,7 +40,7 @@ const UIItemsCart = () => {
 
     return (
         <>
-            <S.StyledCard >
+            <S.StyledCard pHeigth={pHeigth}>
                 {isMobile ?
                     <>
                         <UIItemsMobileCart></UIItemsMobileCart>

@@ -119,7 +119,7 @@ export const ContentTotalWrapper = styled.div`
   justify-content: flex-end;
 `;
 
-export const CartContent = styled.div`
+export const CartContent = styled.div<{ height: number }>`
   display: flex;
   gap: 24px;
   max-width: 960px;
@@ -130,7 +130,9 @@ export const CartContent = styled.div`
   @media (max-width: 767px) {
     padding: 0 16px 16px;
     margin: 0;
-    height: 716px;
+
+    height: ${(props: any) =>
+      props.height >= 667 ? `calc(${props.height}px - 87px)` : "715px"};
   }
 `;
 
@@ -188,14 +190,15 @@ export const CartTable = styled.div`
   border-collapse: collapse;
 `;
 
-export const StyledCard = styled.div`
+export const StyledCard = styled.div<{ pHeigth: number }>`
   justify-content: space-around;
   color: black;
   background-color: #ffffff;
   padding: 24px;
   border-radius: 4px;
   @media (max-width: 767px) {
-    height: 100%;
+    height: ${(props: any) =>
+      props.pHeigth >= 667 ? `${props.pHeigth}px` : "715px"};
     padding: 16px;
     display: flex;
     flex-direction: column;
