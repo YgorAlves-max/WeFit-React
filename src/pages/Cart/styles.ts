@@ -132,7 +132,7 @@ export const CartContent = styled.div<{ height: number }>`
     margin: 0;
 
     height: ${(props: any) =>
-      props.height >= 667 ? `calc(${props.height}px - 87px)` : "715px"};
+      props.height > 666 ? `calc(${props.height}px - 86px)` : `716px`};
   }
 `;
 
@@ -198,7 +198,9 @@ export const StyledCard = styled.div<{ pHeigth: number }>`
   border-radius: 4px;
   @media (max-width: 767px) {
     height: ${(props: any) =>
-      props.pHeigth >= 667 ? `${props.pHeigth}px` : "715px"};
+      props.pHeigth > 667 && props.pHeigth < 667
+        ? `calc(${props.pHeigth}px  - 86px)`
+        : `716px`};
     padding: 16px;
     display: flex;
     flex-direction: column;
