@@ -89,6 +89,9 @@ const StyledBar = styled.nav`
   align-items: center;
   padding: 6.5px 0px;
   margin-bottom: 28px;
+    @media (max-width: 768px) {
+        margin-bottom: 0px;
+    }
    
 `;
 
