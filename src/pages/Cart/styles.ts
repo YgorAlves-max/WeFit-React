@@ -198,9 +198,7 @@ export const StyledCard = styled.div<{ pHeigth: number }>`
   border-radius: 4px;
   @media (max-width: 767px) {
     height: ${(props: any) =>
-      props.pHeigth > 667 && props.pHeigth < 667
-        ? `calc(${props.pHeigth}px  - 86px)`
-        : `716px`};
+      props.pHeigth > 800 ? `calc(${props.pHeigth}px  - 86px)` : `716px`};
     padding: 16px;
     display: flex;
     flex-direction: column;
