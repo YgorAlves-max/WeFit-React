@@ -88,6 +88,7 @@ const StyledBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 6.5px 0px;
+  margin-bottom: 28px;
    
 `;
 
