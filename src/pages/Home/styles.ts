@@ -72,7 +72,7 @@ export const HomeImgContent = styled.div`
 `;
 
 export const HomeCard = styled.div`
-  width: 287.32px;
+  width: 287.33px;
   color: #333333;
   height: 285px;
   padding: 10px 11px 10px 11px;
