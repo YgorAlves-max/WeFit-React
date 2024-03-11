@@ -81,7 +81,7 @@ export const HomeCard = styled.div`
 
   @media (max-width: 768px) {
     align-items: center;
-    width: 321px;
+    width: 287.33px;
     display: flex;
     flex-direction: column;
     align-items: center;
