@@ -3,8 +3,8 @@ interface UIDefaultButtonpProps {
   widthVal: number;
   label: string;
   onClick: (param: any) => void;
-  iconSrc?: string;
-  qtdItem?: number;
+  iconSrc: string | null;
+  qtdItem: number | null;
   fontSize: number;
 }
 
