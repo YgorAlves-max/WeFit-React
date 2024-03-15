@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import iconcart from "../../assets/icons/icon-cart.svg";
-import { useNewProducts } from "../../context/CartContext";
+import { useNewProducts } from "../../../context/CartContext";
 const UINavBar = () => {
   const { mProducts } = useNewProducts();
   const location = useLocation();
@@ -38,7 +38,6 @@ const ItemsCount = styled.div`
   margin: 0;
   text-align: right;
 
-  }
 `;
 
 const IconCart = styled.img`
