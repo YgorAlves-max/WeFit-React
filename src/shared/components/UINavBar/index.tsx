@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import iconcart from "../../assets/icons/icon-cart.svg";
+import iconcart from "../../../assets/icons/icon-cart.svg";
 import { useNewProducts } from "../../../context/CartContext";
 const UINavBar = () => {
   const { mProducts } = useNewProducts();
@@ -37,7 +37,6 @@ const ItemsCount = styled.div`
   font-size: 12px;
   margin: 0;
   text-align: right;
-
 `;
 
 const IconCart = styled.img`
@@ -50,7 +49,7 @@ const MyCartDiv = styled.div`
   width: 135.93px;
   height: 38px;
   gap: 8px;
-    text-wrap: nowrap;
+  text-wrap: nowrap;
   @media (max-width: 768px) {
     align-items: center;
     width:81.96px;

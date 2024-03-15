@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import * as S from "./style";
 import { UIDefaultButtonpProps } from "./interface";
+import * as S from "./style";
 
 const UIDefaultButton = ({
   widthVal,
