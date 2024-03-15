@@ -64,7 +64,7 @@ const UIItemsMobileCart = () => {
                     <S.MSubTitleText>TOTAL</S.MSubTitleText>
                     <S.MTotalValueText> {formatPrice(mProducts.reduce((total, product) => total + (product.price * product.quantity), 0))}</S.MTotalValueText>
                 </S.MContentTotalWrapper>
-                <UIDefaultButton onClick={handleFinishPurchase} widthVal={311} fontSize={14} label={"FINALIZAR PEDIDO"} iconSrc={null} qtdItem={null} />
+                <UIDefaultButton onClick={handleFinishPurchase} widthVal={311} fontSize={14} label={"FINALIZAR PEDIDO"} />
             </div>
         </>
     );

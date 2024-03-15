@@ -11,7 +11,7 @@ const ConfirmPaymentCart = () => {
             <S.StyledCard>
                 <S.TitleText>Compra realizada com sucesso!</S.TitleText>
                 <S.ImgContent src={ImgBuy} alt="" />
-                <UIDefaultButton iconSrc={null} qtdItem={null} onClick={handleRedirectToPage} widthVal={180} fontSize={14} label={"VOLTAR"} />
+                <UIDefaultButton onClick={handleRedirectToPage} widthVal={180} fontSize={14} label={"VOLTAR"} />
             </S.StyledCard>
         </S.ContentCard>
     )

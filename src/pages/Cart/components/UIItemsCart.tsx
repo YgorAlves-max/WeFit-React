@@ -75,7 +75,7 @@ const UIItemsCart = ({ pHeigth }: any) => {
                         ))
                         }
                         <S.TableTotalRow>
-                            <UIDefaultButton onClick={handleFinishPurchase} widthVal={235.42} fontSize={14} label={"FINALIZAR PEDIDO"} iconSrc={null} qtdItem={null} />
+                            <UIDefaultButton onClick={handleFinishPurchase} widthVal={235.42} fontSize={14} label={"FINALIZAR PEDIDO"} />
                             <S.ContentTotalWrapper>
                                 <S.SubTitleText>TOTAL</S.SubTitleText>
                                 <S.TotalValueText> {formatPrice(mProducts.reduce((total, product) => total + (product.price * product.quantity), 0))}</S.TotalValueText>

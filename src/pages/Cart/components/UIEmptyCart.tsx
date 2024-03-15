@@ -16,7 +16,7 @@ const UIEmptyCart = () => {
                 <UILineDivision maxwidth={0} color={"3F3D56"} height={1.36} mbottom={0.1} mtop={0.1} />
 
             </S.ContentDivisedImg>
-            <UIDefaultButton iconSrc={null} qtdItem={null} onClick={handleRedirectToPage} widthVal={180} fontSize={14} label={"VOLTAR"} />
+            <UIDefaultButton onClick={handleRedirectToPage} widthVal={180} fontSize={14} label={"VOLTAR"} />
         </S.EmptyStyledCard>)
 }
 
