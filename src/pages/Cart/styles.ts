@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 // Constantes compartilhadas
 export const ContentWrapper = css`
   width: 100%;
-  margin-bottom: 16px;
 `;
 
 export const DivAddInput = styled.span`
